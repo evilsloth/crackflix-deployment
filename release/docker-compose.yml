@@ -1,0 +1,16 @@
+version: "3"
+services:
+  crackflix-scraper:
+    image: ghcr.io/evilsloth/crackflix-scraper:latest
+    container_name: crackflix-scraper
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      A4K_SCRAPER_BASE_URL: http://a4kscrapers-server:8091
+      ALL_DEBRID_AGENT: "${CRACKFLIX_ALL_DEBRID_AGENT}"
+      ALL_DEBRID_API_KEY: "${CRACKFLIX_ALL_DEBRID_API_KEY}"
+  a4kscrapers-server:
+    image: ghcr.io/evilsloth/a4kscrapers-server:latest
+    container_name: a4kscrapers-server
+    restart: always

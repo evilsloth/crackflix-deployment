@@ -16,5 +16,13 @@ export CRACKFLIX_ALL_DEBRID_API_KEY=api_key
 
 ```
 cd release
-docker-compose up -d
+docker compose up -d
+```
+
+# Update
+
+```
+cd release
+docker compose pull
+docker compose up -d
 ```
